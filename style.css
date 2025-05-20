@@ -525,7 +525,7 @@ body {
 	margin: 0;
 	font-family: 'Nunito', sans-serif;
 	background-color: #fff;
-	color: #333;
+	color: #000;
 }
 
 /* Кнопка Назад */
@@ -698,6 +698,16 @@ body {
 	margin-top: -115px;
 	margin-left: -75px;
 	margin-bottom: 30px;
+}
+
+.main h3 {
+	font-size: 46px;                        /* ЗМІНИЛА РОЗМІР, Було 36px */
+	color: #f7c703;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	scroll-margin-top: 100px;
 }
 
 .header-7wonders ~ .content .main h1,
@@ -1039,12 +1049,12 @@ body.under-construction .main-content {
 body.under-construction .main-content h1 {
 	font-size: 52px;                                    /* ЗМІНИЛА РОЗМІР, Було 2.5rem */
 	margin-bottom: 25px;
-	color: #333;
+	color: #000;
 }
 
 body.under-construction .main-content p {
 	font-size: 24px;                                    /* ЗМІНИЛА РОЗМІР, Було 1.2rem */
-	color: #666;
+	color: #333;
 	margin-bottom: 35px;
 }
 
@@ -1222,4 +1232,202 @@ body.contact-page .contact-form button:hover {
 	color: #555;
 	margin-bottom: 25px;
 	text-align: center;
+}
+
+
+
+/* Розділ Корисне */
+.useful-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 24px;
+}
+
+.useful-card {
+	background-color: #f5f5f5;
+	border-radius: 30px;
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.2s ease;
+	height: 370px;
+	width: 330px;
+}
+
+.useful-card:hover {
+	transform: translateY(-5px);
+}
+
+.useful-card img {
+	width: 100%;
+	height: auto;
+	border-radius: 16px;
+}
+
+.useful-image-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.useful-title {
+	font-size: 24px;
+	font-weight: bold;
+	font-family: 'Nunito', sans-serif;
+	color: #000;
+}
+
+/* Сторінка Калькулятор */
+.main-content.calculator-page {
+	color: #2b2b2b;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;                                      /* ЗМІНИЛА РОЗМІР, Було 13px */
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content.calculator-page input,
+.main-content.calculator-page textarea,
+.main-content.calculator-page select,
+.main-content.calculator-page button {
+	font: inherit;
+	color: #1f1f1f;
+}
+
+.main-content.calculator-page p,
+.main-content.calculator-page h1,
+.main-content.calculator-page h2,
+.main-content.calculator-page h3,
+.main-content.calculator-page h4,
+.main-content.calculator-page h5,
+.main-content.calculator-page h6,
+.main-content.calculator-page ul {
+	margin: 0;
+}
+
+.main-content.calculator-page img { max-width: 100%; }
+
+.main-content.calculator-page a:hover { text-decoration: none; }
+
+.main-content.calculator-page :focus { outline: none; }
+
+.main-content.calculator-page .wrapper {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.main-content.calculator-page .inner {
+	width: 600px;
+	height: 620px;
+	max-width: 90%;
+	padding: 0 0 5px;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 30px;
+}
+
+.main-content.calculator-page .inner h3 {
+	font-size: 28px;                                                              /* ЗМІНИЛА РОЗМІР, Було 15px */
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+}
+
+.main-content.calculator-page form {
+	width: 100%;
+	padding: 5% 5% 2%;
+}
+
+.main-content.calculator-page .form-group {
+	display: flex;
+	margin: 4px 0;
+}
+
+.main-content.calculator-page .form-group .form-wrapper {
+	width: 50%;
+}
+
+.main-content.calculator-page .form-wrapper {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.main-content.calculator-page .form-wrapper label {
+	margin-bottom: 0;
+}
+
+.main-content.calculator-page .form-control {
+	width: 95%;
+	height: 40px;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	text-align: center;
+}
+
+.main-content.calculator-page .form-control:focus {
+	border-color: #ae3c33;
+}
+
+.main-content.calculator-page select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	padding-left: 20px;
+}
+
+.main-content.calculator-page select option[value=""][disabled] {
+	display: none;
+}
+
+.main-content.calculator-page button,
+.main-content.calculator-page input[type="button"] {
+	width: 90%;
+	height: 40px;
+	margin: 2vh auto 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 30px;
+	background: #008cba;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 18px;                                                     /* ЗМІНИЛА РОЗМІР, Було 12px */
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	position: relative;
+	transition: opacity .3s ease, background .3s ease;
+}
+
+.main-content.calculator-page button:hover,
+.main-content.calculator-page input[type="button"]:hover {
+	opacity: .85;
+}
+
+.main-content.calculator-page #install_button {
+	background: #4da109;
+	width: 95%;
+}
+
+.main-content.calculator-page #share_button {
+	background: #09a188;
+	opacity: .9;
+	width: 95%;
+}
+
+.main-content.calculator-page #Science img {
+	margin-top: 5px;
+	vertical-align: middle;
 }

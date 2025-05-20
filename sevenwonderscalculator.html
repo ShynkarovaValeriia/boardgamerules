@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/favicon" href="images/favicon.ico">
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+		<title>Калькулятор 7 Чудес</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+		<div id="navbar" class="navbar">
+			<div class="navbar-left">
+				<a href="index.html" id="logo">
+					<img src="images/favicon.ico" alt="Logo">
+				</a>
+			</div>
+			<div class="navbar-right">
+				<a href="game-catalog.html">Каталог ігор</a>
+				<a href="in-progress.html">Про нас</a>
+				<a href="contact.html">Контакти</a>
+				<a href="#">Меню</a>
+			</div>
+		</div>
+		
+		<div class="main-content calculator-page">
+			<div class="wrapper" style="background-image:url('images/sev-pyramide-bg.jpg');">
+				<div class="inner" align="center" id="Points">
+					<form>
+						<h3 style="margin-bottom:10px;">Порахуйте свої бали</h3>
+
+						<div class="form-wrapper">
+							Кількість монет
+							<input type="number" class="form-control" id="Coins" value="0" onfocus="this.value=''">
+						</div>
+
+						<div class="form-group">
+							<div class="form-wrapper">
+								Військові конфлікти
+								<input type="number" class="form-control" id="Military" value="0" onfocus="this.value=''">
+							</div>
+							<div class="form-wrapper">
+								Чудеса
+								<input type="number" class="form-control" id="Wonders" value="0" onfocus="this.value=''">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-wrapper">
+								Громадські споруди
+								<input type="number" class="form-control" id="Blue" value="0" onfocus="this.value=''">
+							</div>
+							<div class="form-wrapper">
+								Торгові споруди
+								<input type="number" class="form-control" id="Yellow" value="0" onfocus="this.value=''">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-wrapper">
+								Гільдії
+								<input type="number" class="form-control" id="Guilds" value="0" onfocus="this.value=''">
+							</div>
+							<div class="form-wrapper">
+								Інше
+								<input type="number" class="form-control" id="Other" value="0" onfocus="this.value=''">
+							</div>
+						</div>
+
+						<div class="form-group" id="Science" style="margin-top:15px;">
+							<div class="form-wrapper">
+								<img src="images/TypeA.png" style="height:32px;margin-bottom:5px;">
+								<input type="number" class="form-control" style="width:65%;display:inline;" id="SciA" value="0" onfocus="this.value=''">
+							</div>
+							<div class="form-wrapper">
+								<img src="images/TypeB.png" style="height:32px;margin-bottom:5px;">
+								<input type="number" class="form-control" style="width:65%;display:inline;" id="SciB" value="0" onfocus="this.value=''">
+							</div>
+							<div class="form-wrapper">
+								<img src="images/TypeC.png" style="height:32px;margin-bottom:5px;">
+								<input type="number" class="form-control" style="width:65%;display:inline;" id="SciC" value="0" onfocus="this.value=''">
+							</div>
+						</div>
+
+						<div class="form-wrapper" style="margin-top:15px;">
+							<strong>Всього балів:</strong>
+							<input type="text" class="form-control" id="TotalPoints" readonly>
+						</div>
+
+						<div class="form-group">
+							<div class="form-wrapper">
+								<button type="button" onclick="window.location.href = 'sevenwonders.html';">Повернутися назад</button>
+							</div>
+							<div class="form-wrapper">
+								<button onclick="ResetForm();return false;">Скинути форму</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	
+		<footer class="footer">
+			<div class="footer-container">
+				
+				<div class="footer-logo-block">
+					<div class="footer-logo">
+						<a href="index.html" id="footer-logo">
+							<img src="images/favicon.ico" alt="Logo" class="footer-logo-img">
+						</a>
+						<div>
+							<p class="board-games-text">Настільні ігри для всіх</p>
+							<p class="footer-copy">© 2025</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-column">
+					<h3 class="footer-heading">Найпопулярніші ігри</h3>
+					<ul class="list footer__nav">
+						<li><a href="alias.html" class="link">Еліас</a></li>
+						<li><a href="monopoly.html" class="link">Монополія</a></li>
+						<li><a href="trapwords.html" class="link">Тенета слів</a></li>
+						<li><a href="wingspan.html" class="link">Крила</a></li>
+					</ul>
+					<a href="game-catalog.html" class="footer-small-link">Переглянути всі ігри</a>
+				</div>
+
+				<div class="footer-column">
+					<h3 class="footer-heading">Корисні посилання</h3>
+					<ul class="list footer__nav">
+						<li><a href="game-catalog.html" class="link">Каталог ігор</a></li>
+						<li><a href="in-progress.html" class="link">Про нас</a></li>
+						<li><a href="contact.html" class="link">Контакти</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</footer>
+	
+		<script src="gpn.js"></script>
+	
+	</body>
+</html>

@@ -132,9 +132,33 @@
 				if (boardgames.question4[1].checked) {bal+=1;}
 				if (boardgames.question5[2].checked) {bal+=1;}
 				
-				boardgames.display.value = "Ваш бал: " + bal + " з 5";
+				const who = n1 ? n1 : 'Друже';
+
+				boardgames.display.value = `${who}, твій бал: ${bal} з 5`;
 			}
 		</script>
+	
+		<script type="text/javascript">
+			var n1 = window.prompt("Введіть ім'я:", "Наприклад - Іван");
+			if (n1 == null) {
+				alert("Дія була скасована");
+			} else {
+				var n2 = window.prompt("Введіть прізвище:", "Наприклад - Іванченко");
+				if (n2 == null) {
+					alert("Дія була скасована");
+				} else {
+					var n3 = window.prompt("Введіть по батькові:", "Наприклад - Іванович");
+					if (n3 == null) {
+						alert("Дія була скасована");
+					} else {
+						alert("Привіт " + n2 + " " + n1 + " " + n3 + "! Раді тебе бачити!");
+					}
+				}
+			}
+		</script>
+		<noscript>
+			<p>Ваш Web-браузер не підтримує JavaScript</p>
+		</noscript>
 	
 	</body>
 </html>
