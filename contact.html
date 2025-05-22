@@ -28,15 +28,95 @@
 		</div>
 
 		<div class="main-content">
-			<h1>Контакти</h1>
-			<p>Якщо у вас з’явилися будь-які запитання щодо настільних ігор чи сайту, зв’яжіться з нами зручним для вас способом.</p>
-			
-			<div class="contact-info">
-				<p><i class="fa fa-map-marker"></i> вул. Харківська, 7А, Дніпро</p>
-				<p><i class="fa fa-phone"></i> +38 (012) 345-67-89</p>
-				<p><i class="fa fa-envelope"></i> boardgamerules@gmail.com</p>
+			<div class="contact-container">
+				<div class="contact-left">
+					<h1>Маєте питання?</h1>
+					<p>
+						Ми завжди раді допомогти! 
+						Якщо у вас виникли будь-які запитання щодо настільних ігор чи роботи сайту, просто заповніть форму, напишіть нам на електронну пошту або зателефонуйте. 
+						Ми відповімо на кожне ваше запитання та допоможемо розібратися з усім, що вас цікавить.
+					</p>
+					<p><i class="fa fa-comment"></i> вул. Харківська, 7А, Дніпро</p>
+					<p><i class="fa fa-envelope"></i> boardgamerules@gmail.com</p>
+					<p><i class="fa fa-phone"></i> +38 (012) 345-67-89</p>
+				</div>
+
+				<div class="contact-right">
+					<form id="userForm" onsubmit="return validateForm()">
+						<div class="form-row">
+							<div class="form-group half-width">
+								<label for="firstName">Ім’я <span class="required">*</span></label>
+								<input type="text" id="firstName" name="firstName" placeholder="Введіть ім’я" required>
+							</div>
+							<div class="form-group half-width">
+								<label for="lastName">Прізвище <span class="required">*</span></label>
+								<input type="text" id="lastName" name="lastName" placeholder="Введіть прізвище" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email">E-mail <span class="required">*</span></label>
+							<input type="email" id="email" name="email" placeholder="Введіть e-mail" required>
+						</div>
+
+						<div class="form-group">
+							<label for="phone">Телефон </label>
+							<input type="tel" id="phone" name="phone" 
+								   placeholder="+380-00-00-00-000" 
+								   pattern="^\+38\s?\(?0\d{2}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}$" 
+								   title="Введіть номер у форматі +380-00-00-00-000">
+						</div>
+
+						<div class="form-group">
+							<label for="age">Вік <span class="required">*</span></label>
+							<input type="number" id="age" name="age" min="5" max="120" placeholder="Введіть вік" required>
+						</div>
+
+						<div class="form-group">
+							<label for="country">Країна </label>
+							<select id="country" name="country">
+								<option value="" disabled selected>Оберіть країну</option>
+								<option value="Україна">Україна</option>
+								<option value="Польща">Польща</option>
+								<option value="Німеччина">Німеччина</option>
+								<option value="Франція">Франція</option>
+								<option value="США">США</option>
+								<option value="Інша">Інша</option>
+							</select>
+						</div>
+					  
+						<div class="form-group">
+							<div class="form-group">
+								<label class="radio-label">Бажаний спосіб зв’язку <span class="required">*</span></label>
+								<div class="radio-options">
+									<label><input type="radio" name="contactMethod" value="email" required> E-mail</label><br>
+									<label><input type="radio" name="contactMethod" value="phone"> Телефон</label><br>
+									<label><input type="radio" name="contactMethod" value="none"> Не потрібно зв’язуватись</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="comments">Повідомлення <span class="required">*</span></label>
+							<textarea id="comments" name="comments" placeholder="Введіть повідомлення" required></textarea>
+						</div>
+
+						<div class="form-checks">
+							<label>
+								<input type="checkbox" name="terms" required>
+								Я погоджуюся з умовами та положеннями <span class="required">*</span>
+							</label>
+							<label>
+								<input type="checkbox" name="newsletter">
+								Підписатися на нашу розсилку новин та акцій
+							</label>
+						</div>
+
+						<button type="submit">НАДІСЛАТИ</button>
+					</form>
+				</div>
 			</div>
-		
+
 			<div class="quiz-section">	
 				<h2>Пройти опитування</h2>
 			
@@ -160,5 +240,78 @@
 			<p>Ваш Web-браузер не підтримує JavaScript</p>
 		</noscript>
 	
+		<script>
+			function validateForm() {
+				const doc = window.document;
+
+				const firstName = doc.getElementById('firstName').value.trim();
+				const lastName = doc.getElementById('lastName').value.trim();
+				const email = doc.getElementById('email').value.trim();
+				const phone = doc.getElementById('phone').value.trim();
+				const age = parseInt(doc.getElementById('age').value.trim());
+				const countrySelect = doc.getElementById('country');
+				const country = countrySelect.value;
+
+				const contactMethods = doc.getElementsByName('contactMethod');
+				let contactMethod = '';
+				for (let i = 0; i < contactMethods.length; i++) {
+					if (contactMethods[i].checked) {
+						contactMethod = contactMethods[i].value;
+						break;
+					}
+				}
+
+				const comments = doc.getElementById('comments').value.trim();
+
+				const termsAccepted = doc.querySelector('input[name="terms"]').checked;
+				const wantsNewsletter = doc.querySelector('input[name="newsletter"]').checked;
+
+				if (!firstName || !lastName || !email || isNaN(age) || age < 5 || age > 120 || !comments) {
+					alert("Будь ласка, заповніть усі обов’язкові поля правильно.");
+					return false;
+				}
+
+				if (!contactMethod) {
+					alert("Оберіть бажаний спосіб зв’язку.");
+					return false;
+				}
+
+				if (!termsAccepted) {
+					alert("Ви повинні погодитися з умовами.");
+					return false;
+				}
+
+				const hasLetters = /[a-zA-Zа-яА-ЯґєіїҐЄІЇ]/.test(phone);
+				const hasDigits = /\d/.test(phone);
+				if (phone && (hasLetters || !hasDigits)) {
+					alert("Будь ласка, введіть правильний номер телефону.");
+					return false;
+				}
+
+				const formData = {
+					firstName,
+					lastName,
+					email,
+					phone,
+					age,
+					country: country || "Не вказано",
+					contactMethod,
+					comments,
+					termsAccepted,
+					wantsNewsletter,
+					timestamp: new Date().toISOString()
+				};
+
+				const uniqueKey = 'form_' + Date.now();
+				window.localStorage.setItem(uniqueKey, JSON.stringify(formData));
+
+				alert("Дякуємо за вашу відповідь!");
+
+				window.document.getElementById('userForm').reset();
+
+				return false;
+			}
+		</script>
+
 	</body>
 </html>
